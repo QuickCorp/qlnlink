@@ -1,0 +1,69 @@
+{
+  "qfb":"eyJhcGlLZXkiOiJBSXphU3lDQUVweXJJUFIyeGxlb3ItU3V6cUFvS3FqaTc5N3BqSDAiLCJhdXRoRG9tYWluIjoicWxubGluay5maXJlYmFzZWFwcC5jb20iLCJkYXRhYmFzZVVSTCI6Imh0dHBzOi8vcWxubGluay5maXJlYmFzZWlvLmNvbSIsInByb2plY3RJZCI6InFsbmxpbmsiLCJzdG9yYWdlQnVja2V0IjoicWxubGluay5hcHBzcG90LmNvbSIsIm1lc3NhZ2luZ1NlbmRlcklkIjoiMzU1NzczODE2NDg1In0=",
+  "messages":[
+   {
+      "en":"sign up as a sponsor",
+      "es":"Inscribase como patrocinador"
+   },
+   {
+     "en":"Fill up this form to be a Sponsor!",
+     "es":"Llene este formulario para ser patrocinador"
+   },
+   {
+     "en":"Company Name",
+     "es":"Nombre de la Empresa"
+   },
+   {
+     "en":"Logo",
+     "es":"Logo"
+   },
+   {
+     "en":"First Name",
+     "es":"Primer Nombre"
+   },
+   {
+     "en":"Last Name",
+     "es":"Segundo Nombre"
+   },
+   {
+     "en":"Phone",
+     "es":"Teléfono"
+   },
+   {
+     "en":"You don't need to use typescript nor any transpiler to run QCObjects. It runs directly on the browser and it uses pure javascript with no extra dependencies of code. You can make your own components expressed in real native javascript objects or extend a native DOM object to use in your own way.",
+     "es":"No necesitas usar typescript o ningún transpiler para ejecutar QCObjects. Corre directamente sobre el explorador y usa solamente Javascript sin dependencias extra en el código. Puedes hacer tus propios componentes expresados en objetos reales javascript o extender un objeto DOM para usarlo a tu manera."
+   },
+   {
+     "en":"QCObjects is a javascript framework designed to make easier everything about the MVC patterns implementation into the pure javascript scope.",
+     "es":"QCObjects es un framework en Javascript hecho para hacer todo más fácil implementando patrones MVC."
+   },
+   {
+     "en":"View on Github",
+     "es":"Ver en Github"
+   },
+   {
+     "en":"Find out more",
+     "es":"Ver más"
+   },
+   {
+     "en":"Documentation on Readthedocs",
+     "es":"Documentación en Readthedocs"
+   },
+   {
+     "en":"Made by",
+     "es":"Realizado por"
+   },
+   {
+     "en":"Thank you!",
+     "es":"¡Gracias!"
+   },
+   {
+     "en":"We will keep in touch with you as soon as possible",
+     "es":"Estaremos en contacto lo más pronto posible"
+   },
+   {
+     "en":"You can make your first donation just right now!",
+     "es":"Puedes hacer tu primer donativo ahora mismo"
+   }
+  ]
+}
