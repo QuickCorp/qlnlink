@@ -36,9 +36,11 @@ Package('cl.quickcorp.view',[
 			GLOBAL.previewLogoChanged=this.previewLogoChanged;
 			GLOBAL.generateLink=this.generateLink;
 			GLOBAL.generateLinkFormViewInstance = this;
-			Tag('component[name=progressbar]')[0].style.display='none';
-			Tag('component[name=thankyou]')[0].style.display='none';
-			Tag('component[name=generate_link_form_fields]')[0].style.display='block';
+			if (Tag('component[name=generate_link_form_fields]').length>0){
+				Tag('component[name=progressbar]')[0].style.display='none';
+				Tag('component[name=thankyou]')[0].style.display='none';
+				Tag('component[name=generate_link_form_fields]')[0].style.display='block';
+			}
 
 		},
 		done:function (){
