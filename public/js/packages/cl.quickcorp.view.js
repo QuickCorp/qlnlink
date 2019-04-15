@@ -85,7 +85,7 @@ Package('cl.quickcorp.view',[
 				Tag('component[name=progressbar]')[0].style.display='none';
 				Tag('component[name=generate_link_form_fields]')[0].style.display='none';
 				Tag('component[name=thankyou]')[0].style.display='block';
-				var url = 'https://{{domain}}?_{{_id}}'.replace( new RegExp('{{domain}}','g'),component.domain).replace( new RegExp('{{_id}}','g'),_id);
+				var url = 'https://{{domain}}/{{_id}}'.replace( new RegExp('{{domain}}','g'),component.domain).replace( new RegExp('{{_id}}','g'),_id);
 				var innerHTML = '<a href="{{url}}"><b>{{url}}</b></a>';
 				innerHTML = innerHTML.replace( new RegExp('{{url}}','g'),url);
 				Tag('generatedLink')[0].innerHTML=innerHTML;

@@ -5,7 +5,7 @@ CONFIG.set('componentsBasePath','templates/components/');
 CONFIG.set('delayForReady',1); // delay to wait before executing the first ready event, it includes imports
 CONFIG.set('preserveComponentBodyTag',false); // don't use <componentBody></componentBody> tag
 CONFIG.set('useConfigService',true); // using config.json for custom settings config
-CONFIG.set('routingWay','search');
+CONFIG.set('routingWay','pathname');
 
 Import('firebase-app');
 Import('firebase-firestore');

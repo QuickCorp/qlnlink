@@ -33,7 +33,7 @@ Package('cl.quickcorp.controller',[
 		done: function (){
 			var _id = (function (){
 					try {
-						return document.location.search.split('?_')[1].split('&')[0];
+						return document.location.pathname.split('/')[1].split('&')[0];
 					}catch (e){
 
 					}
