@@ -87,7 +87,6 @@ Package('cl.quickcorp.view',[
 				var innerHTML = '<a href="{{url}}"><b>{{url}}</b></a>';
 				innerHTML = innerHTML.replace( new RegExp('{{url}}','g'),url);
 				Tag('generatedLink')[0].innerHTML=innerHTML;
-				console.log(doc.data());
 				console.log(_id);
 			});
 
