@@ -15,7 +15,7 @@ Package('cl.quickcorp.controller',[
 		component:null,
 		relocationUrl:null,
 		getQlnLinkUrl:function (id){
-			GLOBAL.loadFirebase();
+			GLOBAL.connect();
 			var view=this;
 			firebase.firestore().collection("qlnlinks").doc(id).get().then(
 				function (doc){

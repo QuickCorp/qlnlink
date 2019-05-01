@@ -77,7 +77,7 @@ Package('cl.quickcorp.view',[
 			var data = component.data;
 			logger.debug(component);
 
-			GLOBAL.loadFirebase();
+			GLOBAL.connect();
 
 			var newQlnLinkRef = firebase.firestore().collection("qlnlinks").doc();
 			var _id = newQlnLinkRef.id;
