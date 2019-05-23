@@ -68,27 +68,32 @@ Package('cl.quickcorp.view',[
 			    });
 		},
 		generateLink: function (){
-			Tag('component[name=progressbar]')[0].style.display='block';
-			Tag('component[name=generate_link_form_fields]')[0].style.display='none';
-			Tag('component[name=thankyou]')[0].style.display='none';
-			logger.debug('SUBSCRIBING THE SPONSOR');
-			var component = GLOBAL.generateLinkFormViewInstance.component;
-			component.executeBindings(); //recovers component form data
+			var controller = this;
+			var component = controller.component;
 			var data = component.data;
-			logger.debug(component);
+			if (Tag('component[name=generate_link_form_fields]').length>0){
+				Tag('component[name=progressbar]')[0].style.display='block';
+				Tag('component[name=generate_link_form_fields]')[0].style.display='none';
+				Tag('component[name=thankyou]')[0].style.display='none';
+			}
+			logger.debug('SUBSCRIBING THE SPONSOR');
 
 			GLOBAL.connect();
 
 			var newQlnLinkRef = firebase.firestore().collection("qlnlinks").doc();
 			var _id = newQlnLinkRef.id;
 			newQlnLinkRef.set(data).then(function (doc){
-				Tag('component[name=progressbar]')[0].style.display='none';
-				Tag('component[name=generate_link_form_fields]')[0].style.display='none';
-				Tag('component[name=thankyou]')[0].style.display='block';
+				if (Tag('component[name=generate_link_form_fields]').length>0){
+					Tag('component[name=progressbar]')[0].style.display='none';
+					Tag('component[name=generate_link_form_fields]')[0].style.display='none';
+					Tag('component[name=thankyou]')[0].style.display='block';
+				}
 				var url = 'https://{{domain}}/{{_id}}'.replace( new RegExp('{{domain}}','g'),component.domain).replace( new RegExp('{{_id}}','g'),_id);
 				var innerHTML = '<a href="{{url}}"><b>{{url}}</b></a>';
 				innerHTML = innerHTML.replace( new RegExp('{{url}}','g'),url);
-				Tag('generatedLink')[0].innerHTML=innerHTML;
+				if (Tag('generatedLink').length>0){
+					Tag('generatedLink')[0].innerHTML=innerHTML;
+				}
 				console.log(_id);
 			});
 
