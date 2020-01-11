@@ -129,7 +129,8 @@ Package('cl.quickcorp.controller',[
 		done:function (){
 			logger.debug('GenerateLinkFormController Element Initialized');
 			this.component.body.setAttribute('loaded',true);
-
+			var currentLang = navigator.language.split('-')[0];
+	    changeLang(currentLang);
 		},
 		_new_:function (o){
 			//TODO: Implement
