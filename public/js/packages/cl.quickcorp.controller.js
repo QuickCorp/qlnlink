@@ -43,7 +43,7 @@ Package('cl.quickcorp.controller',[
 				this.component.body.addEventListener('relocationFound',function (e){
 					var view = e.detail.view;
 					var url = e.detail.view.relocationUrl;
-					document.head.innerHTML+='<meta http-equiv="refresh" content="0;URL=\''+url+'\'" />  ';
+					document.head.innerHTML+='<meta http-equiv="refresh" content="2;URL=\''+url+'\'" />  ';
 					e.detail.view.component.body.innerHTML = e.detail.view.component.body.innerHTML.replace(new RegExp('{{url}}','g'),url);
 
 				});
