@@ -82,6 +82,7 @@ Package('cl.quickcorp.view',[
 
 			var newQlnLinkRef = firebase.firestore().collection("qlnlinks").doc();
 			var _id = newQlnLinkRef.id;
+			data.url = component.body.subelements('#url')[0].value;
 			newQlnLinkRef.set(data).then(function (doc){
 				if (Tag('component[name=generate_link_form_fields]').length>0){
 					Tag('component[name=progressbar]')[0].style.display='none';
