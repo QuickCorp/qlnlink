@@ -6,10 +6,11 @@
 </div>
 
 
-  <component name="redirecting" class="fadeIn swipeOut" cached="false"
+  <component name="generate_link_form" class="fadeIn swipeOut" cached="false"
     controllerClass="GenerateLinkFormController"
     viewClass="GenerateLinkFormView">
-    <routing path="/" name="generate_link_form" ></routing>
+    <routing path="^/$" name="generate_link_form" ></routing>
+    <routing path="^/(?!\s*$).+" name="redirecting" ></routing>
   </component>
 
   <component name="footer" cached="true" componentClass="Component"></component>

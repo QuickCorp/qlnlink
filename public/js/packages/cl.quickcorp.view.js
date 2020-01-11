@@ -76,7 +76,7 @@ Package('cl.quickcorp.view',[
 				Tag('component[name=generate_link_form_fields]')[0].style.display='none';
 				Tag('component[name=thankyou]')[0].style.display='none';
 			}
-			logger.debug('SUBSCRIBING THE SPONSOR');
+			logger.debug('GENERATING LINK');
 
 			GLOBAL.connect();
 
@@ -88,7 +88,7 @@ Package('cl.quickcorp.view',[
 					Tag('component[name=generate_link_form_fields]')[0].style.display='none';
 					Tag('component[name=thankyou]')[0].style.display='block';
 				}
-				var url = '{{basePath}}/{{_id}}'.replace( new RegExp('{{basePath}}','g'),CONFIG.get('basePath')).replace( new RegExp('{{_id}}','g'),_id);
+				var url = CONFIG.get('basePath')+_id;
 				var innerHTML = '<a href="{{url}}"><b>{{url}}</b></a>';
 				innerHTML = innerHTML.replace( new RegExp('{{url}}','g'),url);
 				if (Tag('generatedLink').length>0){

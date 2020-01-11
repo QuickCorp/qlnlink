@@ -14,15 +14,22 @@ Package('cl.quickcorp.controller',[
 	Class('RelocationController',Object,{
 		component:null,
 		relocationUrl:null,
+		get _id() {
+					return document.location.pathname.split('/')[1].split('&')[0];
+		},
 		getQlnLinkUrl:function (id){
 			GLOBAL.connect();
 			var view=this;
 			firebase.firestore().collection("qlnlinks").doc(id).get().then(
 				function (doc){
 					var data = doc.data();
+					console.log(data);
 					if (data != null && data.hasOwnProperty('url')){
 						view.relocationUrl = doc.data()['url'];
 						view.component.body.dispatchEvent(new CustomEvent('relocationFound',{detail:{view:view}}));
+					} else {
+						document.body.innerHTML = document.body.innerHTML.replace(new RegExp('{{url}}','g'),'404 NOT FOUND');
+						document.head.innerHTML+='<meta http-equiv="refresh" content="5;URL=\'/\'" />  ';
 					}
 				});
 		},
@@ -31,18 +38,14 @@ Package('cl.quickcorp.controller',[
 			this.component = o.component;
 		},
 		done: function (){
-			var _id = (function (){
-					try {
-						return document.location.pathname.split('/')[1].split('&')[0];
-					}catch (e){
-
-					}
-				})();
-			if (_id != null && _id!=""){
+			var _id = this._id;
+			if (_id != null && _id != ""){
 				this.component.body.addEventListener('relocationFound',function (e){
 					var view = e.detail.view;
 					var url = e.detail.view.relocationUrl;
 					document.head.innerHTML+='<meta http-equiv="refresh" content="0;URL=\''+url+'\'" />  ';
+					e.detail.view.component.body.innerHTML = e.detail.view.component.body.innerHTML.replace(new RegExp('{{url}}','g'),url);
+
 				});
 				this.getQlnLinkUrl(_id);
 			}
@@ -131,6 +134,7 @@ Package('cl.quickcorp.controller',[
 			this.component.body.setAttribute('loaded',true);
 			var currentLang = navigator.language.split('-')[0];
 	    changeLang(currentLang);
+			console.log('replacing url in html');
 		},
 		_new_:function (o){
 			//TODO: Implement
