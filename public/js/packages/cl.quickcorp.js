@@ -8,5 +8,5 @@ Import ('cl.quickcorp.view');
 Package('cl.quickcorp',[
   Class('FormValidator',Object,{
 
-  }),
+  })
 ]);

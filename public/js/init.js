@@ -12,11 +12,12 @@ Import('firebase-firestore');
 
 Import('cl.quickcorp');
 
-var changeLang = function (lang2){
-  var lang1=(GLOBAL.get('lang'))?(GLOBAL.get('lang')):('en');
+var changeLang = function (){
+  var lang1=GLOBAL.get('lang','en');
+  var lang2 = navigator.language.slice(0, 2);
   if (lang1!=lang2){
     Tag('p,a,b,h1,h2,h3,input,component').map(function (element){
-      CONFIG.get('messages').map(function (message){
+      CONFIG.get('i18n').messages.map(function (message){
         if (message.hasOwnProperty(lang1) && message.hasOwnProperty(lang2)){
           element.innerHTML = element.innerHTML.replace(message[lang1],message[lang2]);
         }
@@ -26,6 +27,8 @@ var changeLang = function (lang2){
     });
   }
 };
+
+changeLang();
 
 Ready(function (){
 
